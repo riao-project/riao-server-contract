@@ -47,7 +47,7 @@
 		"type": "git",
 		"url": "git+https://github.com/riao-project/riao-server-contract.git"
 	},
-	"author": "riao-project",
+	"author": "riao",
 	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/riao-project/riao-server-contract/issues"
