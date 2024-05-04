@@ -17,9 +17,7 @@ describe('Request', () => {
 
 	it('can get many', () => {
 		const req: GetManyRequest<User> = {
-			query: {
-				offset: 100,
-			},
+			offset: 100,
 		};
 		expect(req).toBeTruthy();
 	});
@@ -33,10 +31,8 @@ describe('Request', () => {
 
 	it('can post one', () => {
 		const req: PostOneRequest<User> = {
-			data: {
-				username: 'bob',
-				password: 'password123',
-			},
+			username: 'bob',
+			password: 'password123',
 		};
 		expect(req).toBeTruthy();
 	});

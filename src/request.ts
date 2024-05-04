@@ -1,28 +1,28 @@
 import { DatabaseRecord, DatabaseRecordId } from '@riao/dbal';
 import { DataQuery } from './data-query';
 
-export type ApiRequest<T = {}> = T;
+export type GetManyRequest<T extends DatabaseRecord = DatabaseRecord> =
+	DataQuery<T>;
 
-export interface GetManyRequest<T extends DatabaseRecord = DatabaseRecord>
-	extends ApiRequest {
-	query: DataQuery<T>;
-}
-
-export interface GetOneRequest extends ApiRequest {
+export interface GetOneRequest {
 	id: DatabaseRecordId;
 }
 
-export interface PostOneRequest<T extends DatabaseRecord = DatabaseRecord>
-	extends ApiRequest {
+export type PostOneRequest<T extends DatabaseRecord = DatabaseRecord> =
+	Partial<T>;
+
+export interface PatchOneRequest<T extends DatabaseRecord = DatabaseRecord> {
+	id: DatabaseRecordId;
 	data: Partial<T>;
 }
 
-export interface PatchOneRequest<T extends DatabaseRecord = DatabaseRecord>
-	extends ApiRequest {
-	id: number | string;
-	data: Partial<T>;
+export interface DeleteOneRequest {
+	id: DatabaseRecordId;
 }
 
-export interface DeleteOneRequest extends ApiRequest {
-	id: number | string;
-}
+export type ApiRequest<T extends DatabaseRecord = DatabaseRecord> =
+	| GetManyRequest<T>
+	| GetOneRequest
+	| PostOneRequest<T>
+	| PatchOneRequest<T>
+	| DeleteOneRequest;
