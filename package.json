@@ -1,6 +1,6 @@
 {
 	"name": "@riao/server-contract",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "@riao/server-contract",
 	"private": "true",
 	"typescript-template": {
