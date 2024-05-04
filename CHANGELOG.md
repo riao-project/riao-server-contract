@@ -1,1 +1,1 @@
-# riao-server-contract - Changelog
+# @riao/server-contract - Changelog

@@ -1,7 +1,7 @@
 {
-	"name": "riao-server-contract",
+	"name": "@riao/server-contract",
 	"version": "1.0.0",
-	"description": "riao-server-contract",
+	"description": "@riao/server-contract",
 	"private": "true",
 	"typescript-template": {
 		"base": "1.0.0",
@@ -42,13 +42,13 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/riao-server-contract/riao-server-contract.git"
+		"url": "git+https://github.com/riao-project/riao-server-contract.git"
 	},
-	"author": "riao-server-contract",
+	"author": "riao-project",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/riao-server-contract/riao-server-contract/issues"
+		"url": "https://github.com/riao-project/riao-server-contract/issues"
 	},
-	"homepage": "https://github.com/riao-server-contract/riao-server-contract#readme",
+	"homepage": "https://github.com/riao-project/riao-server-contract#readme",
 	"keywords": []
 }

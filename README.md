@@ -1,4 +1,4 @@
-# riao-server-contract - Readme
+# @riao/server-contract - Readme
 
 ## Contributing & Development
 
