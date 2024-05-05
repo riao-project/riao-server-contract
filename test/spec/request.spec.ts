@@ -17,30 +17,32 @@ describe('Request', () => {
 
 	it('can get many', () => {
 		const req: GetManyRequest<User> = {
-			offset: 100,
+			query: { offset: 100 },
 		};
 		expect(req).toBeTruthy();
 	});
 
 	it('can get one', () => {
 		const req: GetOneRequest = {
-			id: 5,
+			params: { id: 5 },
 		};
 		expect(req).toBeTruthy();
 	});
 
 	it('can post one', () => {
 		const req: PostOneRequest<User> = {
-			username: 'bob',
-			password: 'password123',
+			body: {
+				username: 'bob',
+				password: 'password123',
+			},
 		};
 		expect(req).toBeTruthy();
 	});
 
 	it('can patch one', () => {
 		const req: PatchOneRequest<User> = {
-			id: 1,
-			data: {
+			params: { id: 1 },
+			body: {
 				username: 'bob',
 				password: 'password123',
 			},
@@ -50,7 +52,7 @@ describe('Request', () => {
 
 	it('can delete one', () => {
 		const req: DeleteOneRequest = {
-			id: 1,
+			params: { id: 1 },
 		};
 
 		expect(req).toBeTruthy();
