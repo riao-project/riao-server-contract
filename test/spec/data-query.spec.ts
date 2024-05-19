@@ -1,9 +1,9 @@
 import 'jasmine';
-import { DataQuery } from '../../src';
+import { SearchQuery } from '../../src';
 
-describe('DataQuery', () => {
+describe('SearchQuery', () => {
 	it('is backwards compatible', () => {
-		const dq: DataQuery = {};
+		const dq: SearchQuery = {};
 		expect(dq).toBeTruthy();
 	});
 });

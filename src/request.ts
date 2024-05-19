@@ -1,5 +1,5 @@
-import { DatabaseRecord, DatabaseRecordId } from '@riao/dbal';
-import { DataQuery } from './data-query';
+import { DataRecord, DataRecordId } from './data-record';
+import { GetSearchQuery, SearchQuery } from './search-query';
 
 export interface Request {
 	// Request params, e.g. `/users/:id`
@@ -11,22 +11,27 @@ export interface Request {
 
 export type GetRequest = Request;
 
-export interface GetManyRequest<T extends DatabaseRecord = DatabaseRecord>
+export interface GetManyRequest<T extends DataRecord = DataRecord>
 	extends GetRequest {
-	query?: DataQuery<T>;
+	query?: GetSearchQuery<T>;
 }
 
-export interface GetOneRequest<T extends DatabaseRecord = DatabaseRecord>
+export interface GetOneRequest<T extends DataRecord = DataRecord>
 	extends GetRequest {
-	query?: DataQuery<T>;
-	params: { id: DatabaseRecordId };
+	query?: SearchQuery<T>;
+	params: { id: DataRecordId };
 }
 
 export interface PostRequest extends Request {
 	body: any;
 }
 
-export interface PostOneRequest<T extends DatabaseRecord = DatabaseRecord>
+export interface SearchRequest<T extends DataRecord = DataRecord>
+	extends PostRequest {
+	body: SearchQuery<T>;
+}
+
+export interface PostOneRequest<T extends DataRecord = DataRecord>
 	extends PostRequest {
 	body: Partial<T>;
 }
@@ -35,19 +40,19 @@ export interface PatchRequest extends Request {
 	body: any;
 }
 
-export interface PatchOneRequest<T extends DatabaseRecord = DatabaseRecord>
+export interface PatchOneRequest<T extends DataRecord = DataRecord>
 	extends PatchRequest {
-	params: { id: DatabaseRecordId };
+	params: { id: DataRecordId };
 	body: Partial<T>;
 }
 
 export type DeleteRequest = Request;
 
 export interface DeleteOneRequest extends DeleteRequest {
-	params: { id: DatabaseRecordId };
+	params: { id: DataRecordId };
 }
 
-export type ApiRequest<T extends DatabaseRecord = DatabaseRecord> =
+export type ApiRequest<T extends DataRecord = DataRecord> =
 	| Request
 	| GetRequest
 	| GetManyRequest<T>
