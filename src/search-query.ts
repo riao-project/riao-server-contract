@@ -11,4 +11,5 @@ export interface SearchQuery<T extends DataRecord = DataRecord>
 	extends GetSearchQuery<T> {
 	where?: Partial<T>;
 	withCount?: boolean;
+	search?: string;
 }
